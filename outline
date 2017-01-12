@@ -1,0 +1,55 @@
+// bubble sort
+1) swap function takes in 3 params (ary, i, j)
+  - create a temp var, set to array[i]
+  - copy array[i] to array[j]
+  - set ary[j] to temp
+2) bubbleSort function passes in ary
+  - create swaps var set to 0
+  - loop through the array
+    -if (position j is greater than position i,
+      then run the swap function)
+      -increment swaps
+  - if swaps > 0 then recursively run bubbleSort
+  - return array
+
+// merge sort
+1) mergeSort function takes in array
+  -if the array is <= 1 return the array
+  -var middle set to the array length/2 (Math.floor)
+  -var left set to array slice of 0 and middle
+  -var right set to array slice of middle and array length
+  -set left to call mergeSort(left)
+  -set right to call mergeSort(right)
+  -return merge() of left, right and array
+2) merge function takes in left, right and array
+  -set variables for leftIndex, rightIndex, outputIndex all equal to 0
+  -while the leftIndex < left.length and rightIndex < right.length
+    -if left[leftIndex] < right[rightIndex]
+      -set the array[outputIndex++] = left[leftIndex++]
+    -otherwise,
+      -set the array[outputIndex++] = right[rightIndex++]
+    -loop thru leftIndex to set array[outputIndex++] = left[i]
+    -loop thru rightIndex to set array[outputIndex++] = right[i]
+3) return array
+
+// Quicksort
+1) quickSort function takes in (array, start, end)
+  -set start to 0 if undefined, else set to start
+  -set end to array.length if undefined, else set to end
+  -if start is greater than or equal to end, then return array
+  -create middle var set to partition(array, start, end)
+  -set array = recursively call quickSort(array, start, middle)
+  -set array = quickSort(array, middle +1, end)
+  -return array
+2)partition function takes in (array, start, end)
+  -create pivot var and set to array[end-1]
+  -create j var set to start
+  -loop through array
+    -if array[i] <= to the pivot, then run swap function(array, i,j)
+    -increment j
+  -run swap(array, end-1, j)
+  -return j
+3)swap function takes in 3 params (ary, i, j)
+  - create a temp var, set to array[i]
+  - copy array[i] to array[j]
+  - set ary[j] to temp
