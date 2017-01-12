@@ -48,6 +48,36 @@ const merge = (left, right, array) => {
     return array
 }
 
+const quickSort = (array, start, end) => {
+  start = start === undefined ? 0 : start
+  end = end === undefined ? array.length : end
+
+  if (start >= end) {
+    return array
+  }
+  let middle = partition(array, start, end)
+  array = quickSort(array, start, middle)
+  array = quickSort(array, middle+1, end)
+  return array
+}
+
+const partition = (array, start, end) => {
+  let pivot = array[end-1]
+  let j = start
+
+  for (let i=start; i<end-1; i++) {
+    if (array[i] <= pivot) {
+      swap(array, i, j)
+      j++
+    }
+  }
+  swap(array, end-1, j)
+  return j
+}
+
+
+
 array1 = [1,5,8,3,4,2,7,6]
 console.log(bubbleSort(array1))
 console.log(mergeSort(array1))
+console.log(quickSort(array1))
