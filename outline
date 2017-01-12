@@ -6,15 +6,15 @@
 2) bubbleSort function passes in ary
   - create swaps var set to 0
   - loop through the array
-    -if (position j is greater than position i,
-      then run the swap function)
+    -if (position i is greater than position i + 1,
+      then run the swap function on array, i and i + 1)
       -increment swaps
   - if swaps > 0 then recursively run bubbleSort
   - return array
 
 // merge sort
 1) mergeSort function takes in array
-  -if the array is <= 1 return the array
+  -if the array length is <= 1 return the array
   -var middle set to the array length/2 (Math.floor)
   -var left set to array slice of 0 and middle
   -var right set to array slice of middle and array length
@@ -28,8 +28,8 @@
       -set the array[outputIndex++] = left[leftIndex++]
     -otherwise,
       -set the array[outputIndex++] = right[rightIndex++]
-    -loop thru leftIndex to set array[outputIndex++] = left[i]
-    -loop thru rightIndex to set array[outputIndex++] = right[i]
+  -loop thru leftIndex to set array[outputIndex++] = left[i]
+  -loop thru rightIndex to set array[outputIndex++] = right[i]
 3) return array
 
 // Quicksort
