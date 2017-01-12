@@ -75,8 +75,6 @@ const partition = (array, start, end) => {
   return j
 }
 
-
-
 array1 = [1,5,8,3,4,2,7,6]
 console.log(bubbleSort(array1))
 console.log(mergeSort(array1))
